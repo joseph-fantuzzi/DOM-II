@@ -89,6 +89,39 @@ adventureAwaits_textContent.addEventListener("pointermove", (event) => {
   event.target.style.color = "red";
 });
 
-//Event Listener 9:
+//Event Listener 9: Selection Change Event
 
-//Event Listener 10:
+document.addEventListener("selectionchange", () => {
+  document.body.style.backgroundColor = "lightpink";
+});
+
+//Event Listener 10: Focus Event
+
+const inputText = document.querySelector("#name-input");
+const inputLabel = document.querySelector(".input label");
+const inputDiv = document.querySelector(".input");
+
+function styleTheInput() {
+  inputText.style.borderRadius = "30px";
+  inputDiv.style.textAlign = "center";
+  inputDiv.style.padding = "20px";
+  inputDiv.style.height = "100px";
+  inputText.style.height = "60%";
+  inputLabel.style.fontSize = "2rem";
+}
+
+styleTheInput();
+
+inputText.addEventListener("focus", () => {
+  inputText.style.boxShadow =
+    "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px";
+  inputText.style.backgroundColor = "gray";
+});
+
+//Prevent Default
+
+Array.from(document.links).forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
+});
