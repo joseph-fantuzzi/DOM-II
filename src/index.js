@@ -24,7 +24,7 @@ mainNav.addEventListener("mouseleave", () => {
   mainNav.style.backgroundColor = "white";
 });
 
-//Event Listener 3: Keydown
+//Event Listener 3: Keydown + Keyup
 
 function escKey(event) {
   if (event.key === "Escape") {
@@ -68,8 +68,27 @@ signMeUpBtns.forEach((btn) => {
   });
 });
 
-//Event Listener 7: Select
+//Event Listener 7: DBLclick
 
 const letsGo_h2 = document.querySelector(".content-section:nth-of-type(1) .text-content h2");
 
-letsGo_h2.addEventListener("select", () => {});
+letsGo_h2.addEventListener("dblclick", () => {
+  letsGo_h2.style.color = "green";
+});
+
+//Event Listener 8: Pointer Move
+
+document.body.addEventListener("pointermove", (event) => {
+  console.log(`x-coordinate: ${event.x}`);
+  console.log(`y-coordinate: ${event.y}`);
+});
+
+const adventureAwaits_textContent = document.querySelector(".content-section:nth-of-type(2) .text-content");
+
+adventureAwaits_textContent.addEventListener("pointermove", (event) => {
+  event.target.style.color = "red";
+});
+
+//Event Listener 9:
+
+//Event Listener 10:
